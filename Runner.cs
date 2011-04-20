@@ -26,7 +26,7 @@ namespace interactiondeser
 					JObject token = (JObject)JToken.ReadFrom (jr);
 					if (token["interaction"] != null)
 					{
-						var interaction = JsonConvert.DeserializeObject (token.ToString ());
+						var interaction = JsonConvert.DeserializeObject<InteractionWrapper> (token.ToString ());
 						jsonSer.Serialize (jsonTw, interaction);
 						Console.WriteLine ();
 					}
